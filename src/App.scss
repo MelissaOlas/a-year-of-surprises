@@ -1,0 +1,55 @@
+$font: "Poppins", sans-serif;
+$regular-font-weight: 400;
+$medium-font-weight: 500;
+$semibold--font-weight: 600;
+$mobile: 390px;
+$tablet: 768px;
+$desktop: 1440px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+.App {
+  text-align: center;
+  font-family: $font;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #258963ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fdcdd9ff;
+}
+
+title {
+  color: #fdcdd9ff;
+  // iPhone 12 and smaller
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+  }
+
+  // MacBook Air and bigger
+  @media (min-width: 1440px) {
+    font-size: 1.5rem;
+  }
+}
+
+.App-link {
+  color: #a1dbc3ff;
+}

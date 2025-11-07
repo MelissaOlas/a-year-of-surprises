@@ -1,0 +1,75 @@
+$font: "Poppins", sans-serif;
+$background-color: #258963ff;
+$button-color: #fdcdd9ff;
+$text-color: #258963ff;
+
+// --- Général & Conteneur ---
+.surprises-container {
+  background-color: $background-color;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font;
+}
+
+// --- En-tête ---
+.surprises-header {
+  color: $button-color;
+  text-align: center;
+  margin-bottom: 30px;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+}
+
+// --- Grille des Mois ---
+.months-grid {
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+// --- Boutons des Mois ---
+.month-button {
+  background-color: $button-color;
+  color: $text-color;
+  border: none;
+  padding: 20px 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 29px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  // trouver autre moyen de garder le ratio:
+  aspect-ratio: 1 / 1;
+
+  // Effet au hover ?
+  &:hover {
+    filter: brightness(0.95);
+    // transform: translateY(-2px);
+    // box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  // Effet au clic?
+  &:active {
+    filter: brightness(0.9);
+    // transform: translateY(0);
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// --- media queries à modif ---
+@media (min-width: 600px) {
+  .months-grid {
+    // grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+  }
+}
