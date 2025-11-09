@@ -1,4 +1,4 @@
-export const CardsFiller = [
+export const cardsData = [
   {
     id: "01",
     title: "Mars",
