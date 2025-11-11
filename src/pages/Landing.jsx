@@ -18,6 +18,10 @@ const Landing = () => {
     navigate("/"); // Retour au login
   };
 
+  const handleNavi = (month) => {
+    navigate(`/${month}`);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -27,7 +31,7 @@ const Landing = () => {
               <button
                 key={months.id}
                 className="month-button"
-                // add click logic
+                onClick={() => handleNavi(months.title)}
               >
                 {months.title}
               </button>
