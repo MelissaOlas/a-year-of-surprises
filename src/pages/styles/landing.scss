@@ -3,18 +3,17 @@ $background-color: #258963ff;
 $button-color: #fdcdd9ff;
 $text-color: #258963ff;
 
-// --- Général & Conteneur ---
+// --- global, container ---
 .surprises-container {
   background-color: $background-color;
-  min-height: 100vh;
-  padding: 20px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: $font;
 }
 
-// --- En-tête ---
+// --- header ---
 .surprises-header {
   color: $button-color;
   text-align: center;
@@ -26,21 +25,19 @@ $text-color: #258963ff;
   }
 }
 
-// --- Grille des Mois ---
+// --- months grid ---
 .months-grid {
   width: 100%;
   max-width: 400px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-// --- Boutons des Mois ---
+// --- months buttons ---
 .month-button {
   background-color: $button-color;
   color: $text-color;
   border: none;
-  padding: 10px 30px;
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
@@ -48,10 +45,12 @@ $text-color: #258963ff;
   transition: background-color 0.2s;
   border-radius: 29px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  // trouver autre moyen de garder le ratio:
   aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  // Effet au hover ?
   &:hover {
     filter: brightness(0.95);
     // transform: translateY(-2px);
@@ -66,10 +65,21 @@ $text-color: #258963ff;
   }
 }
 
-// --- media queries à modif ---
 @media (min-width: 600px) {
   .months-grid {
-    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     max-width: 600px;
+    gap: 25px;
+  }
+  .month-button {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .months-grid {
+    max-width: 100%;
+    width: 100%;
+    gap: 15px;
   }
 }

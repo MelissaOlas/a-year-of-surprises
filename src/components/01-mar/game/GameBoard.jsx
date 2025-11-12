@@ -1,33 +1,36 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
 import cardGameData from "./cardGameData";
+import { useNavigate } from "react-router-dom";
 
 function GameBoard() {
   const [cardsArray, setCardsArray] = useState([]);
-  const [moves, setMoves] = useState(0);
+  const [won, setWon] = useState(false);
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
   const [stopFlip, setStopFlip] = useState(false);
-  const [won, setWon] = useState(0);
+  const navigate = useNavigate();
 
   function NewGame() {
     setTimeout(() => {
       const randomOrderArray = cardGameData.sort(() => 0.5 - Math.random());
+
       setCardsArray(randomOrderArray);
-      setMoves(0);
       setFirstCard(null);
       setSecondCard(null);
-      setWon(0);
+      setWon(false);
     }, 1200);
   }
 
   //handling cards 1 and 2 selection
   function handleSelectedCards(item) {
-    console.log(typeof item);
     if (firstCard !== null && firstCard.id !== item.id) {
       setSecondCard(item);
     } else {
       setFirstCard(item);
+    }
+    if (stopFlip || item.matched) {
+      return;
     }
   }
 
@@ -47,7 +50,6 @@ function GameBoard() {
             }
           });
         });
-        setWon((preVal) => preVal + 1);
         removeSelection();
       } else {
         setTimeout(() => {
@@ -62,13 +64,21 @@ function GameBoard() {
     setFirstCard(null);
     setSecondCard(null);
     setStopFlip(false);
-    setMoves((prevValue) => prevValue + 1);
   }
 
-  //starts the game for the first time.
+  useEffect(() => {
+    if (cardsArray.length > 0 && cardsArray.every((card) => card.matched)) {
+      setWon(true);
+    }
+  }, [cardsArray]);
+
   useEffect(() => {
     NewGame();
   }, []);
+
+  function handleGoToMenu() {
+    navigate("/home");
+  }
 
   return (
     <div className="gameBoardContainer">
@@ -87,13 +97,16 @@ function GameBoard() {
         ))}
       </div>
 
-      {won !== 6 ? (
-        <div className="gameBoardComments">Moves : {moves}</div>
-      ) : (
-        <div className="gameBoardComments">
-          ???????? You Won in {moves} moves ????????
-        </div>
+      {won && (
+        <button
+          className="gameBoardWin victory-message"
+          onClick={handleGoToMenu}
+        >
+          Well done sweetheart! 🤠 <br />
+          🔙
+        </button>
       )}
+
       <button className="gameBoardButton" onClick={NewGame}>
         New Game
       </button>
