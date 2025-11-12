@@ -28,7 +28,7 @@ export default function Authent() {
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #258963 0%, #2da876 100%)",
+        background: "#258963ff",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

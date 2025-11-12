@@ -1,50 +1,50 @@
 export const cardsData = [
   {
     id: "01",
-    title: "Mars",
+    title: "March",
   },
   {
     id: "02",
-    title: "Avril",
+    title: "April",
   },
   {
     id: "03",
-    title: "Mai",
+    title: "May",
   },
   {
     id: "04",
-    title: "Juin",
+    title: "June",
   },
   {
     id: "05",
-    title: "Juillet",
+    title: "July",
   },
   {
     id: "06",
-    title: "Août",
+    title: "August",
   },
   {
     id: "07",
-    title: "Septembre",
+    title: "September",
   },
   {
     id: "08",
-    title: "Octobre",
+    title: "October",
   },
   {
     id: "09",
-    title: "Novembre",
+    title: "November",
   },
   {
     id: "10",
-    title: "Décembre",
+    title: "December",
   },
   {
     id: "11",
-    title: "Janvier",
+    title: "January",
   },
   {
     id: "12",
-    title: "Février",
+    title: "February",
   },
 ];

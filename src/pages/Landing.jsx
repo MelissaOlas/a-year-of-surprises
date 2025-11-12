@@ -15,20 +15,23 @@ const Landing = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
-    navigate("/"); // Retour au login
+    navigate("/");
+  };
+
+  const handleNavi = (month) => {
+    navigate(`/${month}`);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="title">A YEAR OF SURPRISES</h1>
         <div className="surprises-container">
           <div className="months-grid">
             {cardsData.map((months) => (
               <button
                 key={months.id}
                 className="month-button"
-                // add click logic
+                onClick={() => handleNavi(months.title)}
               >
                 {months.title}
               </button>
