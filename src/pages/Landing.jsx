@@ -15,7 +15,7 @@ const Landing = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
-    navigate("/"); // Retour au login
+    navigate("/");
   };
 
   const handleNavi = (month) => {
