@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Snowfall from "react-snowfall";
-import "./AudioPlayer.scss";
+import "./audioPlayer.scss";
 
 const AudioPlayer = ({ audioSrc }) => {
   const [isPaying, setIsPlaying] = useState(false);
@@ -84,7 +84,7 @@ const AudioPlayer = ({ audioSrc }) => {
       </div>
 
       <button className="pause-play-button" onClick={handlePlayPause}>
-        <span class="material-symbols-outlined">
+        <span className="material-symbols-outlined">
           {isPaying ? "pause" : "play_arrow"}
           {snowFall && <Snowfall />}
         </span>
