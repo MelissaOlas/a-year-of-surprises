@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Authent from "./pages/Authent";
 import Landing from "./pages/Landing";
 import March from "./components/01-mar/March";
+import December from "./components/10-dec/December";
 import { useNavigate } from "react-router-dom";
 
 function App() {
@@ -38,6 +39,7 @@ function AppContent() {
         <Route path="/home" element={<Landing />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/march" element={<March />} />
+        <Route path="/december" element={<December />} />
       </Routes>
     </>
   );
