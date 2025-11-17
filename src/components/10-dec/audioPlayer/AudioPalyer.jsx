@@ -1,6 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 import Snowfall from "react-snowfall";
 import "./audioPlayer.scss";
+import { supabase } from "../../../api/supabaseClient";
+
+async function getImage(filename) {
+  const { data, error } = await supabase.storage
+    .from("images")
+    .createSignedUrl(`december/${filename}`, 60);
+
+  if (error) {
+    console.error("Erreur de lien signé:", error);
+    return null;
+  }
+
+  return data.signedUrl;
+}
+const picture = await getImage("hellevator.jpeg");
 
 const AudioPlayer = ({ audioSrc }) => {
   const [isPaying, setIsPlaying] = useState(false);
@@ -64,11 +79,7 @@ const AudioPlayer = ({ audioSrc }) => {
 
   return (
     <div className="player-card">
-      <img
-        src="./assets/hellevator.jpeg"
-        alt="fake album cover"
-        className="album-cover"
-      />
+      <img src={picture} alt="fake album cover" className="album-cover" />
       <input
         type="range"
         min="0"
