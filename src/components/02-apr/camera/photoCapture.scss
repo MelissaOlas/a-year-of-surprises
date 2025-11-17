@@ -53,13 +53,13 @@ $font: "Poppins", sans-serif;
 .camera-body {
   width: 360px;
   height: 280px;
-  background-color: $celeste;
+  background-color: $fairy-tale;
   border: 9px solid #16503a;
   border-radius: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: inset -12px 0px 0px $tiffany-blue;
+  box-shadow: inset -12px 0px 0px #fdc4d2;
 }
 
 .bar {
@@ -88,10 +88,10 @@ $font: "Poppins", sans-serif;
 }
 
 .bar:before {
-  width: 50px;
-  height: 172px;
-  left: 50px;
-  top: 40px;
+  width: 40px;
+  height: 70px;
+  left: 60px;
+  top: 30px;
   position: absolute;
   content: "";
   background: #ffffff80;
@@ -194,4 +194,61 @@ $font: "Poppins", sans-serif;
   height: 30px;
   left: 135px;
   top: 135px;
+}
+
+.top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-1,
+.button-2,
+.button-3,
+.button-4 {
+  border-top: 6px solid #16503a;
+  border-left: 6px solid #16503a;
+  border-right: 6px solid #16503a;
+  background: white;
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+}
+
+.button-1 {
+  width: 40px;
+  height: 20px;
+  top: -25px;
+  left: 65px;
+}
+
+.button-4 {
+  width: 42px;
+  height: 16px;
+  top: -21px;
+  left: 260px;
+}
+
+.button-2 {
+  width: 15px;
+  height: 15px;
+  top: -20px;
+  left: 120px;
+}
+
+.button-3 .box {
+  background: white;
+  width: 40px;
+  height: 10px;
+  border: 6px solid #16503a;
+  border-radius: 9px;
+  margin: 19px;
+}
+
+.button-3 {
+  width: 90px;
+  height: 50px;
+  top: -55px;
+  left: 150px;
+  background: $fairy-tale;
+  border-radius: 40px 40px 0 0;
+  box-shadow: inset 5px 5px 0 0px #fdd2dc;
 }
