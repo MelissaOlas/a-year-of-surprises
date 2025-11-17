@@ -6,7 +6,7 @@ export default function Authent() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const SECRET = "2411saintjean";
+  const SECRET = process.env.REACT_APP_MDP;
 
   const handleLogin = () => {
     if (password === SECRET) {

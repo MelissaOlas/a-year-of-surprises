@@ -6,7 +6,7 @@ import { supabase } from "../../../api/supabaseClient";
 async function getImage(filename) {
   const { data, error } = await supabase.storage
     .from("images")
-    .createSignedUrl(`december/${filename}`, 60);
+    .createSignedUrl(`december/${filename}`, 600);
 
   if (error) {
     console.error("Erreur de lien signé:", error);
