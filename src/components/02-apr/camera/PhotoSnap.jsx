@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import SharePhoto from "../send/sharePhoto";
 import "./photoSnap.scss";
 
 export default function PhotoSnap() {
@@ -44,6 +45,10 @@ export default function PhotoSnap() {
     let ctx = photo.getContext("2d");
     ctx.drawImage(video, 0, 0, width, height);
     setHasPhoto(true);
+
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach((track) => track.stop());
+    }
   };
 
   const closePhoto = () => {
@@ -54,12 +59,8 @@ export default function PhotoSnap() {
 
     ctx.clearRect(0, 0, photo.width, photo.height);
     setHasPhoto(false);
-  };
 
-  const sendPhoto = () => {
-    window.open(
-      `mailto:${process.env.REACT_APP_MAIL}?subject=March pic !&body=M took a photo`
-    );
+    getVideo();
   };
 
   useEffect(() => {
@@ -89,9 +90,10 @@ export default function PhotoSnap() {
           <button className="result-button" onClick={closePhoto}>
             redo ✨
           </button>
-          <button className="result-button" onClick={sendPhoto}>
+          {/* <button className="result-button" photoRef={photoRef}>
             <span class="material-symbols-outlined">send</span>
-          </button>
+          </button> */}
+          <SharePhoto photoRef={photoRef} />
         </div>
       </div>
     </>
