@@ -5,52 +5,83 @@ $sea-green: #258963ff;
 $fairy-tale: #fdcdd9ff;
 
 .snap-container {
-  width: 100vh;
-  position: relative;
+  width: 90%;
+  height: 50vh;
   background-color: $fairy-tale;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5%;
+  gap: 20px;
 }
 
-.camera {
-  position: relative;
+.snap-container.hidden {
+  display: none;
+}
+
+.camera-screen {
+  width: 80%;
+  max-width: 414px;
 }
 
 .result {
   position: fixed;
   top: 0;
-  left: 100%;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: $fairy-tale;
   transition: 0.4s;
+  gap: 20px;
 }
 
 .result.hasPhoto {
-  left: 0;
+  display: flex;
 }
 
 video {
   width: 100%;
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
+  border: 3px solid $sea-green;
+}
+
+canvas {
+  max-width: 90%;
+  width: 414px;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid $sea-green;
 }
 
 .snap-button {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  appearance: none;
   border: none;
   outline: none;
-  padding: 8px 16px;
-  background-color: $celeste;
+  padding: 15px 17px;
+  background-color: $sea-green;
   background-position: 0%;
   background-size: 200%;
-  transition: 0.4;
+  color: white;
+  border-radius: 50%;
+  transition: 0.4s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
 
 .snap-button:hover {
   background-position: 100%;
+  background-color: darken($sea-green, 10%);
+}
+
+.snap-button:active {
+  transform: scale(0.95);
 }
