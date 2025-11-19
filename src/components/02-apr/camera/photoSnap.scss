@@ -1,0 +1,56 @@
+$font: "Poppins", sans-serif;
+$celeste: #c0f7e0ff;
+$tiffany-blue: #a1dbc3ff;
+$sea-green: #258963ff;
+$fairy-tale: #fdcdd9ff;
+
+.snap-container {
+  width: 100vh;
+  position: relative;
+  background-color: $fairy-tale;
+}
+
+.camera {
+  position: relative;
+}
+
+.result {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $fairy-tale;
+  transition: 0.4s;
+}
+
+.result.hasPhoto {
+  left: 0;
+}
+
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.snap-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  background-color: $celeste;
+  background-position: 0%;
+  background-size: 200%;
+  transition: 0.4;
+  cursor: pointer;
+}
+
+.snap-button:hover {
+  background-position: 100%;
+}

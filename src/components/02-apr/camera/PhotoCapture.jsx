@@ -1,16 +1,9 @@
 import "./photoCapture.scss";
 
-const PhotoCapture = () => {
-  // function handleClick() {
-  //   console.log("button clicked !");
-  // }
+const PhotoCapture = ({ onClickHandler }) => {
   return (
     <div className="april-container">
-      {/* <button className="door-closed" onClick={handleClick}>
-        <span className="material-symbols-outlined">door_front</span>
-        <span className="material-symbols-outlined">door_open</span>
-      </button> */}
-      <div className="camera">
+      <div className="camera" onClick={onClickHandler}>
         <div className="top">
           <div className="button-1"></div>
           <div className="button-2"></div>
@@ -19,7 +12,6 @@ const PhotoCapture = () => {
           </div>
           <div className="button-4"></div>
         </div>
-
         <div className="camera-body">
           <div className="bar">
             <div className="small-glass"></div>
