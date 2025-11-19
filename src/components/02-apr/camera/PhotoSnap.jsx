@@ -56,6 +56,12 @@ export default function PhotoSnap() {
     setHasPhoto(false);
   };
 
+  const sendPhoto = () => {
+    window.open(
+      `mailto:${process.env.REACT_APP_MAIL}?subject=March pic !&body=M took a photo`
+    );
+  };
+
   useEffect(() => {
     getVideo();
 
@@ -79,9 +85,14 @@ export default function PhotoSnap() {
 
       <div className={`result ${hasPhoto ? "hasPhoto" : ""}`}>
         <canvas ref={photoRef}></canvas>
-        <button className="snap-button" onClick={closePhoto}>
-          CLOSE
-        </button>
+        <div className="buttons-result">
+          <button className="result-button" onClick={closePhoto}>
+            redo ✨
+          </button>
+          <button className="result-button" onClick={sendPhoto}>
+            <span class="material-symbols-outlined">send</span>
+          </button>
+        </div>
       </div>
     </>
   );

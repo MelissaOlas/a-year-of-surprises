@@ -5,15 +5,18 @@ $sea-green: #258963ff;
 $fairy-tale: #fdcdd9ff;
 
 .snap-container {
-  width: 90%;
-  height: 50vh;
   background-color: $fairy-tale;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 5%;
   padding-bottom: 5%;
+  margin: 2%;
   gap: 20px;
+  border-radius: 5%;
+  height: 30vh;
+  width: 75%;
 }
 
 .snap-container.hidden {
@@ -84,4 +87,24 @@ canvas {
 
 .snap-button:active {
   transform: scale(0.95);
+}
+
+.buttons-result {
+  display: flex;
+  gap: 100px;
+}
+
+.result-button {
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  background-color: $sea-green;
+  background-position: 0%;
+  background-size: 200%;
+  color: white;
+  border-radius: 10%;
+  transition: 0.4s;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
 }

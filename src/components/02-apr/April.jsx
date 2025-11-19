@@ -14,14 +14,18 @@ function April() {
   };
 
   return (
-    <div className="april-container">
+    <div>
       {!showCamera ? (
         <div className="photo-snap">
           <PhotoSnap />
-          <button onClick={handleShowCamera}>Reopen Camera</button>
+          <button className="go-back" onClick={handleShowCamera}>
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
         </div>
       ) : (
-        <PhotoCapture onClickHandler={handleHideCamera} />
+        <div className="april-container">
+          <PhotoCapture onClickHandler={handleHideCamera} />
+        </div>
       )}
     </div>
   );
