@@ -1,0 +1,24 @@
+$font: "Poppins", sans-serif;
+
+.april-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  font-family: $font;
+}
+
+.photo-snap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.go-back {
+  background: none;
+  border: none;
+  padding-top: 2px;
+}

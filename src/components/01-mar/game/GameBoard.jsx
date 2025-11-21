@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
-import cardGameData from "./cardGameData";
+import { getCardGameData } from "./cardGameData";
 import { useNavigate } from "react-router-dom";
 
 function GameBoard() {
   const [cardsArray, setCardsArray] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [won, setWon] = useState(false);
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
   const [stopFlip, setStopFlip] = useState(false);
   const navigate = useNavigate();
 
-  function NewGame() {
+  async function NewGame() {
+    setLoading(true);
+
+    const cardGameData = await getCardGameData();
+
     setTimeout(() => {
       const randomOrderArray = cardGameData.sort(() => 0.5 - Math.random());
 
@@ -19,10 +24,10 @@ function GameBoard() {
       setFirstCard(null);
       setSecondCard(null);
       setWon(false);
+      setLoading(false);
     }, 1200);
   }
 
-  //handling cards 1 and 2 selection
   function handleSelectedCards(item) {
     if (firstCard !== null && firstCard.id !== item.id) {
       setSecondCard(item);
@@ -34,9 +39,6 @@ function GameBoard() {
     }
   }
 
-  // if two selected check if the images are the same,
-  //if true, stop the flipping ability
-  // else they turn back
   useEffect(() => {
     if (firstCard && secondCard) {
       setStopFlip(true);
@@ -59,7 +61,6 @@ function GameBoard() {
     }
   }, [firstCard, secondCard]);
 
-  //empty the firstCard and secondCard comp if same
   function removeSelection() {
     setFirstCard(null);
     setSecondCard(null);
@@ -78,6 +79,10 @@ function GameBoard() {
 
   function handleGoToMenu() {
     navigate("/home");
+  }
+
+  if (loading) {
+    return <div className="loading">Chargement des images...</div>;
   }
 
   return (
