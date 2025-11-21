@@ -9,21 +9,57 @@ async function getImage(filename) {
     .createSignedUrl(`december/${filename}`, 600);
 
   if (error) {
-    console.error("Erreur de lien signé:", error);
+    console.error("Erreur:", error);
     return null;
   }
 
   return data.signedUrl;
 }
-const picture = await getImage("hellevator.jpeg");
 
 const AudioPlayer = ({ audioSrc }) => {
+  const [loading, setLoading] = useState(true);
+  const [imageUrl, setImageUrl] = useState(null);
   const [isPaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [snowFall, setSnowFall] = useState(false);
 
   const audioRef = useRef(null);
+
+  // pre load image to avoid rendering issues
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadImage() {
+      setLoading(true);
+      const url = await getImage("hellevator.jpeg");
+
+      if (isMounted && url) {
+        const img = new Image();
+        img.onload = () => {
+          if (isMounted) {
+            setImageUrl(url);
+            setLoading(false);
+          }
+        };
+        img.onerror = () => {
+          if (isMounted) {
+            console.error("Erreur de chargement de l'image");
+            setLoading(false);
+          }
+        };
+        img.src = url;
+      } else if (isMounted) {
+        setLoading(false);
+      }
+    }
+
+    loadImage();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // seek a specific time in the audio
   const handleSeek = (event) => {
@@ -49,12 +85,13 @@ const AudioPlayer = ({ audioSrc }) => {
 
   useEffect(() => {
     const audio = audioRef.current;
+    if (!audio) return;
     audio.addEventListener("timeupdate", handleTimeUpdate);
 
     return () => {
       audio.removeEventListener("timeupdate", handleTimeUpdate);
     };
-  }, []);
+  }, [loading]);
 
   const handlePlay = () => {
     audioRef.current.play();
@@ -77,9 +114,23 @@ const AudioPlayer = ({ audioSrc }) => {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Chargement de l'image...</p>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return <div className="loading">Chargement de l'image...</div>;
+  }
+
   return (
     <div className="player-card">
-      <img src={picture} alt="fake album cover" className="album-cover" />
+      {imageUrl && (
+        <img src={imageUrl} alt="fake album cover" className="album-cover" />
+      )}
       <input
         type="range"
         min="0"

@@ -27,9 +27,8 @@ export default function PhotoSnap() {
   };
 
   const takePhoto = () => {
-    // Vérification de sécurité
     if (!videoRef.current || !photoRef.current) {
-      console.error("Refs non disponibles");
+      console.error("video et/ou photo non disponibles");
       return;
     }
 
@@ -90,9 +89,6 @@ export default function PhotoSnap() {
           <button className="result-button" onClick={closePhoto}>
             redo ✨
           </button>
-          {/* <button className="result-button" photoRef={photoRef}>
-            <span class="material-symbols-outlined">send</span>
-          </button> */}
           <SharePhoto photoRef={photoRef} />
         </div>
       </div>
