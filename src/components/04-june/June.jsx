@@ -1,4 +1,5 @@
 import Crossword from "@jaredreisinger/react-crossword";
+import "./june.scss";
 
 const data = {
   across: {
@@ -6,43 +7,43 @@ const data = {
       clue: "The first game we played together",
       answer: "CARDS",
       row: 6,
-      col: 5,
+      col: 6,
     },
     7: {
       clue: "A city we she share",
       answer: "TOULOUSE",
       row: 9,
-      col: 2,
+      col: 3,
     },
     9: {
       clue: "The first thing we drank together",
       answer: "WINE",
       row: 12,
-      col: 0,
+      col: 1,
     },
     10: {
       clue: "Another way to call me",
       answer: "SPOUSE",
       row: 12,
-      col: 6,
+      col: 7,
     },
     12: {
       clue: "Something I love to do for you",
       answer: "COOK",
       row: 17,
-      col: 1,
+      col: 2,
     },
     13: {
       clue: "Choko-together (or something like that)",
       answer: "TONYS",
       row: 3,
-      col: 5,
+      col: 6,
     },
     14: {
       clue: "Our favorite drive",
       answer: "HAMILTON",
       row: 1,
-      col: 10,
+      col: 11,
     },
   },
   down: {
@@ -50,43 +51,43 @@ const data = {
       clue: "Our first date",
       answer: "LABELLEEQUIPE",
       row: 0,
-      col: 11,
+      col: 12,
     },
     2: {
       clue: "The month we met",
       answer: "JANUARY",
       row: 1,
-      col: 7,
+      col: 8,
     },
     4: {
       clue: "We were not the first time you came to my place",
       answer: "SOBER",
       row: 6,
-      col: 9,
+      col: 10,
     },
     5: {
       clue: "My favorite drink to have with you",
       answer: "COFFEE",
       row: 8,
-      col: 3,
+      col: 4,
     },
     6: {
       clue: "What I want to be",
       answer: "YOURS",
       row: 8,
-      col: 6,
+      col: 7,
     },
     8: {
       clue: "The first gift you gave me",
       answer: "LIPSTICK",
       row: 11,
-      col: 1,
+      col: 2,
     },
     11: {
       clue: "The city where we met",
       answer: "PARIS",
       row: 12,
-      col: 7,
+      col: 8,
     },
   },
 };
@@ -97,14 +98,14 @@ function June() {
       <Crossword
         data={data}
         theme={{
-          columnBreakpoint: "768px",
-          gridBackground: "#fff",
-          cellBackground: "#fff",
-          cellBorder: "#000",
+          columnBreakpoint: "767px",
+          gridBackground: "#258963",
+          cellBackground: "#fdcdd9",
+          cellBorder: "#258963",
           textColor: "#000",
-          numberColor: "rgba(0,0,0, 0.25)",
-          focusBackground: "#ff0",
-          highlightBackground: "#ffcc00",
+          numberColor: "rgba(37, 137, 99, 1)",
+          focusBackground: "#c0f7e0",
+          highlightBackground: "#a1dbc3",
         }}
         onCorrect={(direction, number, answer) => {
           console.log(`Correct! ${direction} ${number}: ${answer}`);

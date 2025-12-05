@@ -1,0 +1,38 @@
+$phone-breakpoint: 767px;
+$desktop-breakpoint: 600px;
+$celeste: #c0f7e0ff;
+$tiffany-blue: #a1dbc3ff;
+$sea-green: #258963ff;
+$fairy-tale: #fdcdd9ff;
+
+.crossword {
+  .clues {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .direction {
+    flex: 1;
+    min-width: 0;
+
+    h3 {
+      color: #258963;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .clue {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}
