@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Crossword from "@jaredreisinger/react-crossword";
 import "./june.scss";
 
@@ -93,24 +94,34 @@ const data = {
 };
 
 function June() {
+  const [cellBackground, setCellBackground] = useState("#fdcdd9");
+  const handleCorrect = (direction, number, answer) => {
+    console.log(`✅ Correct! ${direction} ${number}: ${answer}`);
+
+    setCellBackground("#a1dbc3");
+
+    setTimeout(() => {
+      setCellBackground("#fdcdd9");
+    }, 700);
+  };
   return (
     <div style={{ width: "95%", maxWidth: "800px", margin: "0 auto" }}>
       <Crossword
+        className="crossword"
         data={data}
         theme={{
           columnBreakpoint: "767px",
           gridBackground: "#258963",
-          cellBackground: "#fdcdd9",
+          cellBackground: cellBackground,
           cellBorder: "#258963",
           textColor: "#000",
           numberColor: "rgba(37, 137, 99, 1)",
           focusBackground: "#c0f7e0",
           highlightBackground: "#a1dbc3",
         }}
-        onCorrect={(direction, number, answer) => {
-          console.log(`Correct! ${direction} ${number}: ${answer}`);
-        }}
+        onCorrect={handleCorrect}
         onCrosswordComplete={() => {
+          // add front congrats message
           console.log("Mots croisés terminés !");
         }}
       />
