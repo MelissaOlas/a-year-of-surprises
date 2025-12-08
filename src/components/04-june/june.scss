@@ -5,34 +5,90 @@ $tiffany-blue: #a1dbc3ff;
 $sea-green: #258963ff;
 $fairy-tale: #fdcdd9ff;
 
-.crossword {
-  .clues {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 40px;
-    align-items: flex-start;
+.sc-eqUAAy.gcfPkn.clues {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  gap: 3%;
+}
+
+.sc-gEvEer.drWDDE.crossword.grid {
+  margin: 0 0 0 5%;
+  @media (max-width: $phone-breakpoint) {
+    width: 90%;
   }
-
-  .direction {
-    flex: 1;
-    min-width: 0;
-
-    h3 {
-      color: #258963;
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
+  @media (min-width: $desktop-breakpoint) {
+    width: 70%;
   }
+}
 
-  .clue {
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+.june-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    &:hover {
-      background-color: #f0f0f0;
-    }
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.message-title {
+  margin: 0 0 15px 0;
+  color: $sea-green;
+  font-size: 32px;
+}
+
+.message-content {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.message-close-button {
+  background-color: $sea-green;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken($sea-green, 10%);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }

@@ -8,104 +8,134 @@ const data = {
       clue: "The first game we played together",
       answer: "CARDS",
       row: 6,
-      col: 6,
+      col: 5,
     },
     7: {
-      clue: "A city we she share",
+      clue: "A city we both have in our hearts",
       answer: "TOULOUSE",
       row: 9,
-      col: 3,
+      col: 2,
     },
     9: {
       clue: "The first thing we drank together",
       answer: "WINE",
       row: 12,
-      col: 1,
+      col: 0,
     },
     10: {
       clue: "Another way to call me",
       answer: "SPOUSE",
       row: 12,
-      col: 7,
+      col: 6,
     },
     12: {
       clue: "Something I love to do for you",
       answer: "COOK",
       row: 17,
-      col: 2,
+      col: 1,
     },
     13: {
-      clue: "Choko-together (or something like that)",
+      clue: "Choko-together 🍫",
       answer: "TONYS",
       row: 3,
-      col: 6,
+      col: 5,
     },
     14: {
-      clue: "Our favorite drive",
+      clue: "Our favorite driver",
       answer: "HAMILTON",
       row: 1,
-      col: 11,
+      col: 10,
     },
   },
   down: {
     1: {
-      clue: "Our first date",
+      clue: "Where we had our first date",
       answer: "LABELLEEQUIPE",
       row: 0,
-      col: 12,
+      col: 11,
     },
     2: {
       clue: "The month we met",
       answer: "JANUARY",
       row: 1,
-      col: 8,
+      col: 7,
     },
     4: {
-      clue: "We were not the first time you came to my place",
+      clue: "We were NOT the first time you came to my place",
       answer: "SOBER",
       row: 6,
-      col: 10,
+      col: 9,
     },
     5: {
       clue: "My favorite drink to have with you",
       answer: "COFFEE",
       row: 8,
-      col: 4,
+      col: 3,
     },
     6: {
-      clue: "What I want to be",
+      clue: "What I am and want to be",
       answer: "YOURS",
       row: 8,
-      col: 7,
+      col: 6,
     },
     8: {
       clue: "The first gift you gave me",
       answer: "LIPSTICK",
       row: 11,
-      col: 2,
+      col: 1,
     },
     11: {
       clue: "The city where we met",
       answer: "PARIS",
       row: 12,
-      col: 8,
+      col: 7,
     },
   },
 };
 
 function June() {
   const [cellBackground, setCellBackground] = useState("#fdcdd9");
+  const [isComplete, setIsComplete] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+
   const handleCorrect = (direction, number, answer) => {
     console.log(`✅ Correct! ${direction} ${number}: ${answer}`);
-
     setCellBackground("#a1dbc3");
-
     setTimeout(() => {
       setCellBackground("#fdcdd9");
     }, 700);
   };
+
+  const handleCrosswordCorrect = () => {
+    if (!isComplete) {
+      setIsComplete(true);
+      setShowMessage(true);
+    }
+  };
+
+  const handleClose = () => {
+    setShowMessage(false);
+  };
+
   return (
-    <div style={{ width: "95%", maxWidth: "800px", margin: "0 auto" }}>
+    <div className="june-container">
+      {showMessage && (
+        <>
+          <div className="message-box">
+            <h2 className="message-title">Well done ! ✨</h2>
+            <p className="message-content">
+              I hope you enjoyed revisiting these moments as much as I did
+              creating this crossword for you. I love you 💙
+            </p>
+            <button onClick={handleClose} className="message-close-button">
+              Fermer
+            </button>
+          </div>
+
+          <div className="overlay" onClick={handleClose} />
+        </>
+      )}
+
       <Crossword
         className="crossword"
         data={data}
@@ -120,10 +150,7 @@ function June() {
           highlightBackground: "#a1dbc3",
         }}
         onCorrect={handleCorrect}
-        onCrosswordComplete={() => {
-          // add front congrats message
-          console.log("Mots croisés terminés !");
-        }}
+        onCrosswordCorrect={handleCrosswordCorrect}
       />
     </div>
   );
