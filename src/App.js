@@ -4,6 +4,8 @@ import Authent from "./pages/Authent";
 import Landing from "./pages/Landing";
 import March from "./components/01-mar/March";
 import April from "./components/02-apr/April";
+import May from "./components/03-may/May";
+import June from "./components/04-june/June";
 import December from "./components/10-dec/December";
 import { useNavigate } from "react-router-dom";
 
@@ -41,6 +43,8 @@ function AppContent() {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/march" element={<March />} />
         <Route path="/april" element={<April />} />
+        <Route path="/may" element={<May />} />
+        <Route path="/june" element={<June />} />
         <Route path="/december" element={<December />} />
       </Routes>
     </>
