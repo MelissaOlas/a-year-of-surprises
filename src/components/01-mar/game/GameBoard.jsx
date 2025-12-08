@@ -82,7 +82,7 @@ function GameBoard() {
   }
 
   if (loading) {
-    return <div className="loading">Chargement des images...</div>;
+    return <div>loading...</div>;
   }
 
   return (
