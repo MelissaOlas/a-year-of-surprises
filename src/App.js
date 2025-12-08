@@ -9,16 +9,11 @@ import June from "./components/04-june/June";
 import July from "./components/05_july/July";
 import December from "./components/10-dec/December";
 import { useNavigate } from "react-router-dom";
-import { Reshaped } from "reshaped";
-import "reshaped/themes/slate/theme.css";
-import "reshaped/bundle.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <Reshaped>
-        <AppContent />
-      </Reshaped>
+      <AppContent />
     </BrowserRouter>
   );
 }

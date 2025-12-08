@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getJulyImageData } from "./data/getJulyPictures";
-import { Loader, View } from "reshaped";
 import "./july.scss";
 
 function July() {
