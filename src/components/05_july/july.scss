@@ -5,7 +5,7 @@ $tiffany-blue: #a1dbc3ff;
 $sea-green: #258963ff;
 $fairy-tale: #fdcdd9ff;
 
-.july_text {
+.july-text {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   padding: 2%;
@@ -25,7 +25,7 @@ $fairy-tale: #fdcdd9ff;
   justify-content: center;
 }
 
-.july_img_container {
+.july-img-container {
   @media (max-width: $phone-breakpoint) {
     max-width: 111px;
     padding: 1%;
@@ -36,12 +36,18 @@ $fairy-tale: #fdcdd9ff;
   }
 }
 
-.july_img {
-  width: auto;
-  height: auto;
+.july-img {
+  @media (max-width: $phone-breakpoint) {
+    max-width: 105px;
+    padding: 1%;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    max-width: 300px;
+    padding: 1%;
+  }
 }
 
-.music_button {
+.music-button {
   background-color: $fairy-tale;
   border: $tiffany-blue;
   border-style: solid;

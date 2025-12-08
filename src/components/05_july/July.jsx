@@ -42,21 +42,21 @@ function July() {
 
   return (
     <div>
-      <p className="july_text">
+      <p className="july-text">
         <div>
           It's summertime and my birthday is right around the corner. Special
           enough (monsieur, enough!) to make you a playlist.
         </div>
         <div>Read through the lyrics that made me think of you 💝</div>
-        <button className="music_button" onClick={handleSpotifyClick}>
-          <span class="material-symbols-outlined">music_note_2</span>
+        <button className="music-button" onClick={handleSpotifyClick}>
+          <span className="material-symbols-outlined">music_note_2</span>
         </button>
       </p>
       <div className="july-container">
         {lyrics.map((item) => (
-          <div key={item.id} className="july_img_container">
+          <div key={item.id} className="july-img-container">
             {item.img ? (
-              <img src={item.img} alt={item.name} className="july_img" />
+              <img src={item.img} alt={item.name} className="july-img" />
             ) : (
               <p>Image non chargée (URL manquante)</p>
             )}
