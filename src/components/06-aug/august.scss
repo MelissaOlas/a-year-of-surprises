@@ -1,0 +1,212 @@
+$phone-breakpoint: 767px;
+$desktop-breakpoint: 600px;
+$celeste: #c0f7e0ff;
+$tiffany-blue: #a1dbc3ff;
+$sea-green: #258963ff;
+$fairy-tale: #fdcdd9ff;
+
+.love-letter-card {
+  max-width: 100%;
+  padding: 2rem;
+  background: $sea-green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .title {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: bold;
+      color: $fairy-tale;
+
+      .highlight {
+        color: $tiffany-blue;
+      }
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+
+      .italic {
+        font-style: italic;
+      }
+
+      .heart {
+        color: $fairy-tale;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .content-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 400px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // ENVELOPE
+  .envelope {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    height: 280px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .envelope-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        $tiffany-blue 0%,
+        rgb(141, 58, 79) 100%
+      );
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .envelope-front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        #79d6a6 0%,
+        #408461 50%,
+        #1c4c33 100%
+      );
+      border-radius: 15px;
+      z-index: 2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(
+          to bottom,
+          rgba(88, 170, 126, 0.5) 0%,
+          transparent 100%
+        );
+        clip-path: polygon(2% 0, 50% 100%, 98% 0);
+      }
+    }
+
+    .wax-seal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, $fairy-tale 0%, #6b0000 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      z-index: 3;
+
+      .seal-icon {
+        color: white;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // LETTER
+  .letter {
+    position: absolute;
+    width: 100%;
+    max-width: 85%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    max-height: 500px;
+    overflow-y: auto;
+
+    &.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .letter-content {
+      .letter-item {
+        margin-bottom: 1.5rem;
+
+        .letter-title {
+          color: $sea-green;
+          margin: 0 0 0.5rem 0;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        .letter-text {
+          line-height: 1.7;
+          color: #333;
+          font-size: 1rem;
+          margin: 0;
+        }
+      }
+
+      .letter-signature {
+        text-align: right;
+        font-style: italic;
+        color: $sea-green;
+        margin-top: 2rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // bonus tactile
+  .tap-indicator {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+
+    @media (min-width: 768px) {
+      opacity: 0;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+  }
+}
