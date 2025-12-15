@@ -6,19 +6,15 @@ import March from "./components/01-mar/March";
 import April from "./components/02-apr/April";
 import May from "./components/03-may/May";
 import June from "./components/04-june/June";
-import July from "./components/05_july/July";
+import July from "./components/05-july/July";
+import August from "./components/06-aug/August";
 import December from "./components/10-dec/December";
 import { useNavigate } from "react-router-dom";
-import { Reshaped } from "reshaped";
-import "reshaped/themes/slate/theme.css";
-import "reshaped/bundle.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <Reshaped>
-        <AppContent />
-      </Reshaped>
+      <AppContent />
     </BrowserRouter>
   );
 }
@@ -52,6 +48,7 @@ function AppContent() {
         <Route path="/may" element={<May />} />
         <Route path="/june" element={<June />} />
         <Route path="/july" element={<July />} />
+        <Route path="/august" element={<August />} />
         <Route path="/december" element={<December />} />
       </Routes>
     </>

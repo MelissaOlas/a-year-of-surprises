@@ -19,7 +19,7 @@ function April() {
         <div className="photo-snap">
           <PhotoSnap />
           <button className="go-back" onClick={handleShowCamera}>
-            <span class="material-symbols-outlined">arrow_back</span>
+            <span className="material-symbols-outlined">arrow_back</span>
           </button>
         </div>
       ) : (
