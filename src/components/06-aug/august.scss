@@ -149,7 +149,7 @@ $fairy-tale: #fdcdd9ff;
     transform: scale(0.9);
     transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
-    max-height: 500px;
+    max-height: 100%;
     overflow-y: auto;
 
     &.visible {
