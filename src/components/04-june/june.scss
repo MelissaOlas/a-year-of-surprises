@@ -5,7 +5,7 @@ $tiffany-blue: #a1dbc3ff;
 $sea-green: #258963ff;
 $fairy-tale: #fdcdd9ff;
 
-.sc-eqUAAy.gcfPkn.clues {
+.clues {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -13,7 +13,7 @@ $fairy-tale: #fdcdd9ff;
   gap: 3%;
 }
 
-.sc-gEvEer.drWDDE.crossword.grid {
+.crossword.grid {
   margin: 0 0 0 5%;
   @media (max-width: $phone-breakpoint) {
     width: 90%;

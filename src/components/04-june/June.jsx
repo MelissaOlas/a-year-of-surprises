@@ -11,7 +11,7 @@ const data = {
       col: 5,
     },
     7: {
-      clue: "A city we both have in our hearts",
+      clue: "A city we both have in our heart",
       answer: "TOULOUSE",
       row: 9,
       col: 2,
@@ -35,7 +35,7 @@ const data = {
       col: 1,
     },
     13: {
-      clue: "Choko-together 🍫",
+      clue: "Choko-together (change the last word) 🍫",
       answer: "TONYS",
       row: 3,
       col: 5,
