@@ -56,6 +56,21 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script>
+      (function () {
+        var p = window.location.search[1];
+        if (p !== undefined) {
+          window.history.replaceState(
+            null,
+            null,
+            window.location.pathname.slice(0, -1) +
+              (p || "/") +
+              window.location.search.slice(3) +
+              window.location.hash,
+          );
+        }
+      })();
+    </script>
     <title>A Year Of Surprises</title>
   </head>
   <body>
