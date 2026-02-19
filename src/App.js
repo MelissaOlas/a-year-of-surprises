@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Authent from "./pages/Authent";
 import Landing from "./pages/Landing";
 import March from "./components/01-mar/March";
@@ -13,9 +13,9 @@ import { useNavigate } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppContent />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
