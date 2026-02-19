@@ -4,7 +4,9 @@ import "./december.scss";
 function December() {
   return (
     <div className="december-container">
-      <AudioPlayer audioSrc={"./assets/henry-hypnotized.mp3"} />
+      <AudioPlayer
+        audioSrc={process.env.PUBLIC_URL + "/assets/henry-hypnotized.mp3"}
+      />
     </div>
   );
 }
