@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/a-year-of-surprises/static/css/main.b750449c.css",
-    "main.js": "/a-year-of-surprises/static/js/main.7ba3e6ff.js",
+    "main.css": "/a-year-of-surprises/static/css/main.3b5d676f.css",
+    "main.js": "/a-year-of-surprises/static/js/main.1b420fa0.js",
     "static/js/453.6fad865c.chunk.js": "/a-year-of-surprises/static/js/453.6fad865c.chunk.js",
     "index.html": "/a-year-of-surprises/index.html",
-    "main.b750449c.css.map": "/a-year-of-surprises/static/css/main.b750449c.css.map",
-    "main.7ba3e6ff.js.map": "/a-year-of-surprises/static/js/main.7ba3e6ff.js.map",
+    "main.3b5d676f.css.map": "/a-year-of-surprises/static/css/main.3b5d676f.css.map",
+    "main.1b420fa0.js.map": "/a-year-of-surprises/static/js/main.1b420fa0.js.map",
     "453.6fad865c.chunk.js.map": "/a-year-of-surprises/static/js/453.6fad865c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b750449c.css",
-    "static/js/main.7ba3e6ff.js"
+    "static/css/main.3b5d676f.css",
+    "static/js/main.1b420fa0.js"
   ]
 }
