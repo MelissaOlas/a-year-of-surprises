@@ -6,6 +6,14 @@ import { cardsData } from "../data/cardsData";
 
 const Landing = () => {
   const navigate = useNavigate();
+  const isUnlocked = (month) => {
+    const today = new Date("2027-04-01");
+    const year = today.getFullYear();
+    const currentMonth = today.getMonth() + 1;
+    console.log("year:", year, "currentMonth:", currentMonth, "month:", month);
+    if (month <= 2) return year > 2026;
+    return year > 2026 || (year === 2026 && currentMonth >= month);
+  };
 
   useEffect(() => {
     if (localStorage.getItem("auth") !== "true") {
@@ -30,10 +38,15 @@ const Landing = () => {
             {cardsData.map((months) => (
               <button
                 key={months.id}
-                className="month-button"
-                onClick={() => handleNavi(months.title)}
+                className={`month-button ${!isUnlocked(months.month) ? "locked" : ""}`}
+                onClick={() =>
+                  isUnlocked(months.month) &&
+                  handleNavi(months.title.toLowerCase())
+                }
+                disabled={!isUnlocked(months.month)}
               >
                 {months.title}
+                {!isUnlocked(months.month) && " 🔒"}
               </button>
             ))}
           </div>

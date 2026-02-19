@@ -1,5 +1,6 @@
 import "./App.scss";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import ProtectedMonth from "./ProdectedMonth";
 import Authent from "./pages/Authent";
 import Landing from "./pages/Landing";
 import March from "./components/01-mar/March";
@@ -42,14 +43,99 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Authent />} />
         <Route path="/home" element={<Landing />} />
+        <Route
+          path="/march"
+          element={
+            <ProtectedMonth month="march">
+              <March />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/april"
+          element={
+            <ProtectedMonth month="april">
+              <April />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/may"
+          element={
+            <ProtectedMonth month="may">
+              <May />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/june"
+          element={
+            <ProtectedMonth month="june">
+              <June />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/july"
+          element={
+            <ProtectedMonth month="july">
+              <July />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/august"
+          element={
+            <ProtectedMonth month="august">
+              <August />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/september"
+          element={
+            <ProtectedMonth month="september">
+              {/* <September /> */}
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/october"
+          element={
+            <ProtectedMonth month="october">{/* <October /> */}</ProtectedMonth>
+          }
+        />
+        <Route
+          path="/november"
+          element={
+            <ProtectedMonth month="november">
+              {/* <November /> */}
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/december"
+          element={
+            <ProtectedMonth month="december">
+              <December />
+            </ProtectedMonth>
+          }
+        />
+        <Route
+          path="/january"
+          element={
+            <ProtectedMonth month="january">{/* <January /> */}</ProtectedMonth>
+          }
+        />
+        <Route
+          path="/february"
+          element={
+            <ProtectedMonth month="february">
+              {/* <February /> */}
+            </ProtectedMonth>
+          }
+        />
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/march" element={<March />} />
-        <Route path="/april" element={<April />} />
-        <Route path="/may" element={<May />} />
-        <Route path="/june" element={<June />} />
-        <Route path="/july" element={<July />} />
-        <Route path="/august" element={<August />} />
-        <Route path="/december" element={<December />} />
       </Routes>
     </>
   );
