@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/a-year-of-surprises/static/css/main.b750449c.css",
-    "main.js": "/a-year-of-surprises/static/js/main.630c3e97.js",
+    "main.js": "/a-year-of-surprises/static/js/main.86bb0e99.js",
     "static/js/453.6fad865c.chunk.js": "/a-year-of-surprises/static/js/453.6fad865c.chunk.js",
     "index.html": "/a-year-of-surprises/index.html",
     "main.b750449c.css.map": "/a-year-of-surprises/static/css/main.b750449c.css.map",
-    "main.630c3e97.js.map": "/a-year-of-surprises/static/js/main.630c3e97.js.map",
+    "main.86bb0e99.js.map": "/a-year-of-surprises/static/js/main.86bb0e99.js.map",
     "453.6fad865c.chunk.js.map": "/a-year-of-surprises/static/js/453.6fad865c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b750449c.css",
-    "static/js/main.630c3e97.js"
+    "static/js/main.86bb0e99.js"
   ]
 }
