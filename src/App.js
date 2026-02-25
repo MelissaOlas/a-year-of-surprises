@@ -8,6 +8,7 @@ import May from "./components/03-may/May";
 import June from "./components/04-june/June";
 import July from "./components/05-july/July";
 import August from "./components/06-aug/August";
+import September from "./components/07-sept/September";
 import December from "./components/10-dec/December";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +28,7 @@ function AppContent() {
   };
 
   return (
-    <>
+    <div className="display-content">
       <div className="App">
         <header className="App-header">
           <h1
@@ -49,9 +50,10 @@ function AppContent() {
         <Route path="/june" element={<June />} />
         <Route path="/july" element={<July />} />
         <Route path="/august" element={<August />} />
+        <Route path="/september" element={<September />} />
         <Route path="/december" element={<December />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

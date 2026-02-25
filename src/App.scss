@@ -18,6 +18,13 @@ $desktop: 1440px;
   }
 }
 
+.display-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .App {
   text-align: center;
   font-family: $font;
