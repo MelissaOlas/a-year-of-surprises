@@ -28,7 +28,7 @@ function AppContent() {
   };
 
   return (
-    <>
+    <div className="display-content">
       <div className="App">
         <header className="App-header">
           <h1
@@ -53,7 +53,7 @@ function AppContent() {
         <Route path="/september" element={<September />} />
         <Route path="/december" element={<December />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

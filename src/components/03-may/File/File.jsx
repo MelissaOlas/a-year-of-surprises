@@ -3,17 +3,13 @@ import "./file.scss";
 function File() {
   return (
     <div className="may-container">
-      <div className="top-file">
-        <div className="divider-1"></div>
-        <div className="divider-2"></div>
-        <div className="divider-3"></div>
-        <div className="divider-4"></div>
-        <div className="divider-5"></div>
-        <div className="divider-6"></div>
-      </div>
-      <div className="file-container">
-        <div className="content"></div>
-      </div>
+      <a
+        href={
+          "https://digibouquet.vercel.app/bouquet/671f29b4-5711-4194-b4ed-245993bc1c05"
+        }
+      >
+        <img className="seeds" src="/seeds.png" alt="seeds-image" />
+      </a>
     </div>
   );
 }
