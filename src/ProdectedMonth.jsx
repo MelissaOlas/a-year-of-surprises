@@ -15,16 +15,19 @@ const MONTH_MAP = {
   february: 2,
 };
 
-function ProtectedMonth({ month, children }) {
+export const isMonthUnlocked = (month) => {
   const today = new Date();
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
 
-  const isUnlocked =
+  return (
     currentYear > 2026 ||
-    (currentYear === 2026 && currentMonth >= MONTH_MAP[month]);
+    (currentYear === 2026 && currentMonth >= MONTH_MAP[month])
+  );
+};
 
-  return isUnlocked ? children : <Navigate to="/home" />;
+function ProtectedMonth({ month, children }) {
+  return isMonthUnlocked(month) ? children : <Navigate to="/home" replace />;
 }
 
 export default ProtectedMonth;
