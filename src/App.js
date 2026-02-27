@@ -10,7 +10,7 @@ import July from "./components/05-july/July";
 import August from "./components/06-aug/August";
 import September from "./components/07-sept/September";
 import December from "./components/10-dec/December";
-import ProtectedMonth from "./components/ProtectedMonth";
+import ProtectedMonth from "./ProdectedMonth";
 import { useNavigate } from "react-router-dom";
 
 function App() {
