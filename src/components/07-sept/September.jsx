@@ -1,12 +1,5 @@
-import AdvGame from "./game/AdvGame";
-import "./game/AdvGame.scss";
-
 function September() {
-  return (
-    <div className="september">
-      <AdvGame />
-    </div>
-  );
+  return <div className="september"></div>;
 }
 
 export default September;
