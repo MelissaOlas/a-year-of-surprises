@@ -42,16 +42,20 @@ function July() {
 
   return (
     <div>
-      <p className="july-text">
-        <div>
-          It's summertime and my birthday is right around the corner. Special
-          enough (monsieur, enough!) to make you a playlist.
+      <div className="july-text">
+        <div className="july-paragraph">
+          Honey, it's already been too long since I last saw you but it seems
+          like you're always with me somehow, especially since every love song
+          is about you now. That's why I made you this playlist.
+          <div>
+            Click the button and read through the lyrics that made me think of
+            you 💝
+          </div>
         </div>
-        <div>Read through the lyrics that made me think of you 💝</div>
         <button className="music-button" onClick={handleSpotifyClick}>
           <span className="material-symbols-outlined">music_note_2</span>
         </button>
-      </p>
+      </div>
       <div className="july-container">
         {lyrics.map((item) => (
           <div key={item.id} className="july-img-container">
