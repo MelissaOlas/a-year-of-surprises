@@ -13,8 +13,25 @@ $fairy-tale: #fdcdd9ff;
   flex-direction: column;
   align-items: center;
   gap: 1%;
+
   @media (max-width: $phone-breakpoint) {
     padding: 5%;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    padding: 2%;
+  }
+}
+
+.july-paragraph {
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+
+  @media (max-width: $phone-breakpoint) {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 

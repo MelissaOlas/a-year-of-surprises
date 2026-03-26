@@ -15,6 +15,11 @@ function April() {
 
   return (
     <div>
+      <div>
+        It's summertime and my birthday is right around the corner. Special
+        enough (monsieur, enough!) to ask you for a little souvenir you could
+        send to me.
+      </div>
       {!showCamera ? (
         <div className="photo-snap">
           <PhotoSnap />

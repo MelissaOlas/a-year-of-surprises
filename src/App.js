@@ -56,7 +56,7 @@ function AppContent() {
           path="/april"
           element={
             <ProtectedMonth month="april">
-              <April />
+              <July />
             </ProtectedMonth>
           }
         />
@@ -80,7 +80,7 @@ function AppContent() {
           path="/july"
           element={
             <ProtectedMonth month="july">
-              <July />
+              <April />
             </ProtectedMonth>
           }
         />
