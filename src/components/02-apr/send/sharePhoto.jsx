@@ -16,7 +16,7 @@ const SharePhoto = ({ photoRef }) => {
             await navigator.share({
               files: [file],
               title: "Photo de M",
-              text: "Photo prise avec Mars",
+              text: `Photo prise le ${new Date().toLocaleDateString()}`,
             });
           } else {
             // desktop fallback (download)
@@ -29,7 +29,7 @@ const SharePhoto = ({ photoRef }) => {
           }
         },
         "image/jpeg",
-        0.9
+        0.9,
       );
     } catch (error) {
       if (error.name !== "AbortError") {
