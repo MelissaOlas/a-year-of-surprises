@@ -2,10 +2,10 @@ import { Navigate } from "react-router-dom";
 
 const MONTH_MAP = {
   march: 3,
-  april: 7,
+  april: 4,
   may: 5,
   june: 6,
-  july: 4,
+  july: 7,
   august: 8,
   september: 9,
   october: 10,
