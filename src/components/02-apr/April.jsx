@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { getJulyImageData } from "./data/getJulyPictures";
-import "./july.scss";
+import { getAprilImageData } from "./data/getAprilPictures";
+import "./april.scss";
 
 function April() {
   const [lyrics, setLyrics] = useState([]);
@@ -11,7 +11,7 @@ function April() {
     async function fetchData() {
       try {
         setLoading(true);
-        const imageData = await getJulyImageData();
+        const imageData = await getAprilImageData();
 
         setLyrics(imageData);
       } catch (err) {
@@ -42,25 +42,25 @@ function April() {
 
   return (
     <div>
-      <div className="july-text">
-        <div className="july-paragraph">
+      <div className="april-text">
+        <div className="april-paragraph">
           Honey, it's already been too long since I last saw you but it seems
           like you're always with me somehow, especially since every love song
           is about you now. That's why I made you this playlist.
           <div>
             Click the button and read through the lyrics that made me think of
-            you 💝
+            you
           </div>
         </div>
         <button className="music-button" onClick={handleSpotifyClick}>
           <span className="material-symbols-outlined">music_note_2</span>
         </button>
       </div>
-      <div className="july-container">
+      <div className="april-container">
         {lyrics.map((item) => (
-          <div key={item.id} className="july-img-container">
+          <div key={item.id} className="april-img-container">
             {item.img ? (
-              <img src={item.img} alt={item.name} className="july-img" />
+              <img src={item.img} alt={item.name} className="april-img" />
             ) : (
               <p>Image non chargée (URL manquante)</p>
             )}
