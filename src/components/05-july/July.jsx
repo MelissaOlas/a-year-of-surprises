@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import PhotoSnap from "./camera/PhotoSnap";
 import PhotoCapture from "./camera/PhotoCapture";
-import "./april.scss";
+import "./july.scss";
 
 function July() {
   const [showCamera, setShowCamera] = useState(true);
@@ -28,7 +28,7 @@ function July() {
           </button>
         </div>
       ) : (
-        <div className="april-container">
+        <div className="july-container">
           <PhotoCapture onClickHandler={handleHideCamera} />
         </div>
       )}

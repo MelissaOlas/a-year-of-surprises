@@ -1,7 +1,7 @@
 import { supabase } from "../../../api/supabaseClient";
 
-async function listJulyFiles() {
-  const { data, error } = await supabase.storage.from("images").list("july", {
+async function listAprilFiles() {
+  const { data, error } = await supabase.storage.from("images").list("april", {
     sortBy: { column: "name", order: "asc" },
   });
 
@@ -13,10 +13,10 @@ async function listJulyFiles() {
   return data.map((file) => file.name);
 }
 
-export async function getJulyPictures(filename) {
+export async function getAprilPictures(filename) {
   const { data, error } = await supabase.storage
     .from("images")
-    .createSignedUrl(`july/${filename}`, 3600);
+    .createSignedUrl(`april/${filename}`, 3600);
 
   if (error) {
     console.error("Erreur de lien pour le fichier", filename, ":", error);
@@ -26,17 +26,17 @@ export async function getJulyPictures(filename) {
   return data.signedUrl;
 }
 
-export async function getJulyImageData() {
-  const fileNames = await listJulyFiles();
+export async function getAprilImageData() {
+  const fileNames = await listAprilFiles();
 
   const finalImageData = await Promise.all(
     fileNames.map(async (filename, index) => {
-      const imageUrl = await getJulyPictures(filename);
+      const imageUrl = await getAprilPictures(filename);
       return {
         id: String(index + 1),
         img: imageUrl,
       };
-    })
+    }),
   );
 
   return finalImageData.filter((item) => item.img !== null);

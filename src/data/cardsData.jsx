@@ -7,7 +7,7 @@ export const cardsData = [
   {
     id: "02",
     title: "April",
-    month: 7,
+    month: 4,
   },
   {
     id: "03",
@@ -22,7 +22,7 @@ export const cardsData = [
   {
     id: "05",
     title: "July",
-    month: 4,
+    month: 7,
   },
   {
     id: "06",
