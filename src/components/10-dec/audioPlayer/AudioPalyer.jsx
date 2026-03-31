@@ -61,14 +61,12 @@ const AudioPlayer = ({ audioSrc }) => {
     };
   }, []);
 
-  // seek a specific time in the audio
   const handleSeek = (event) => {
     const time = event.target.value;
     audioRef.current.currentTime = time;
     setCurrentTime(time);
   };
 
-  // update current time and duration
   const handleTimeUpdate = () => {
     const current = audioRef.current.currentTime;
     const dur = audioRef.current.duration;
@@ -76,7 +74,6 @@ const AudioPlayer = ({ audioSrc }) => {
     setDuration(dur);
   };
 
-  // format time in mm:ss
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
@@ -105,7 +102,6 @@ const AudioPlayer = ({ audioSrc }) => {
     setSnowFall(false);
   };
 
-  // handle play/pause
   const handlePlayPause = () => {
     if (isPaying) {
       handlePause();
@@ -122,12 +118,24 @@ const AudioPlayer = ({ audioSrc }) => {
     );
   }
 
-  if (loading) {
-    return <div className="loading">Chargement de l'image...</div>;
-  }
-
   return (
     <div className="player-card">
+      {/* {snowFall && <Snowfall />} */}
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+          zIndex: 1,
+          opacity: snowFall ? 1 : 0,
+          transition: "opacity 0.3s",
+        }}
+      >
+        <Snowfall />
+      </div>
       {imageUrl && (
         <img src={imageUrl} alt="fake album cover" className="album-cover" />
       )}
@@ -139,16 +147,13 @@ const AudioPlayer = ({ audioSrc }) => {
         onChange={handleSeek}
       />
       <audio ref={audioRef} src={audioSrc} />
-
       <div className="track-duration">
         <p>{formatTime(currentTime)}</p>
         <p>{formatTime(duration)}</p>
       </div>
-
       <button className="pause-play-button" onClick={handlePlayPause}>
         <span className="material-symbols-outlined">
           {isPaying ? "pause" : "play_arrow"}
-          {snowFall && <Snowfall />}
         </span>
       </button>
     </div>
