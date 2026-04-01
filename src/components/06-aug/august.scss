@@ -6,6 +6,10 @@ $sea-green: #258963ff;
 $fairy-tale: #fdcdd9ff;
 
 .love-letter-card {
+  @media (min-width: $desktop-breakpoint) {
+    width: 100%;
+  }
+
   max-width: 100%;
   padding: 2rem;
   background: $sea-green;
@@ -147,7 +151,9 @@ $fairy-tale: #fdcdd9ff;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: scale(0.9);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
     pointer-events: none;
     max-height: 100%;
     overflow-y: auto;
@@ -198,7 +204,7 @@ $fairy-tale: #fdcdd9ff;
     color: rgba(255, 255, 255, 0.8);
     white-space: nowrap;
 
-    @media (min-width: 768px) {
+    @media (min-width: $phone-breakpoint) {
       opacity: 0;
     }
   }
